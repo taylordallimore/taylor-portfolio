@@ -1,6 +1,53 @@
 import React from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import './App.css';
 import profileImage from './yerrmie.jpg';
+
+const contact = `public class ContactMe {	
+  public String myEmail = "taylordallimore98@gmail.com";
+  public int myPhoneNumber = 0223930750;
+  public String myGithub = "https://github.com/taylordallimore";
+  public String myLinkedin = "https://www.linkedin.com/in/taylor-dallimore";
+  }
+}`;
+
+const aboutme = `public class AboutMe {
+  public static void main(String[] args) {
+    System.out.println("Hello, World!");
+    System.out.println("I'm Taylor Dallimore!");
+    System.out.println("I am a third year Computer Science student at Victoria University of Wellington");
+    System.out.println("I am interested in software and web development");
+    System.out.println("I am looking for a career in the IT industry");
+  }
+}`;
+
+const skills = `public class MySkills {
+    public void Java(){
+      System.out.println("My primary language is Java.");
+    }
+    def Python():
+      print("I am also a capable python programmer.")
+    public void HTML() extends CSS{
+      System.out.println("I have experience using HTML and CSS.");
+    }
+    public void JavaScript(){
+      System.out.println("I also have used JavaScript.");
+      System.out.println("I have used React and Node.js (to build this)");
+    }
+    List<String> toolsUsed = new ArrayList<String>();
+    toolsUsed.add("AWS");
+    toolsUsed.add("Docker");
+    toolsUsed.add("Figma");
+    toolsUsed.add("FindBugs");
+    toolsUsed.add("Firebase");
+    toolsUsed.add("Godot");
+    toolsUsed.add("Git");
+    toolsUsed.add("JUnit")
+    toolsUsed.add("Linux");
+    toolsUsed.add("Unreal Engine");
+    toolsUsed.add("Visual Studio Code");
+}`;
 
 // Header component
 const Header = () => {
@@ -10,11 +57,11 @@ const Header = () => {
         <img src={profileImage} alt="Profile" />
       </div>
       <h1>Taylor Dallimore</h1>
-      <ul><p>taylordallimore98@gmail.com</p> </ul>
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li><a href="#projects">Projects</a></li>
         </ul>
       </nav>
@@ -26,14 +73,21 @@ const Header = () => {
 const About = () => {
   return (
     <section id="about">
-      <h2>About Me</h2>
       <p>
-        Hello! I'm Taylor. I am currently in my third and final year 
-        of studying Computer Science at Victoria University of 
-        Wellington. <br></br> I am interested in software and web 
-        development. I made this website to show my skills and help 
-        you realise why you should hire me.
+      <ul><SyntaxHighlighter language="java" style={a11yDark}>
+        {aboutme}
+      </SyntaxHighlighter> </ul>
       </p>
+    </section>
+  );
+};
+
+const Contact = () => {
+  return (
+    <section id="contact">
+      <ul><SyntaxHighlighter language="java" style={a11yDark}>
+        {contact}
+      </SyntaxHighlighter> </ul>
     </section>
   );
 };
@@ -41,45 +95,11 @@ const About = () => {
 const Skills = () => {
   return (
     <section id="skills"> 
-      <h2>Skills</h2>
       <ul>
-        <li>
-          <h3>Java</h3>
-          <p>I have been learning Java for 3 years now and have a good understanding of the language.</p>
-        </li>
-        <li>
-          <h3>HTML</h3>
-          <p>I have been learning HTML for 3 years now and have a good understanding of the language.</p>
-        </li>
-        <li>
-          <h3>CSS</h3>
-          <p>I have been learning CSS for 3 years now and have a good understanding of the language.</p>
-        </li>
-        <li>
-          <h3>JavaScript</h3>
-          <p>I have been learning JavaScript for 3 years now and have a good understanding of the language.</p>
-        </li>
-        <li>
-          <h3>React</h3>
-          <p>I have been learning React for 3 years now and have a good understanding of the language.</p>
-        </li>
-        <li>
-          <h3>Python</h3>
-          <p>I have been learning Python for 3 years now and have a good understanding of the language.</p>
-        </li>
-        <li>
-          <h3>SQL</h3>
-          <p>I have been learning SQL for 3 years now and have a good understanding of the language.</p>
-        </li>
-        <li>
-          <h3>Git</h3>
-          <p>I have been learning Git for 3 years now and have a good understanding of the language.</p>
-        </li>
-        <li>
-          <h3>GitHub</h3>
-          <p>I have been learning GitHub for 3 years now and have a good understanding of the language.</p>
-        </li>
-        </ul>
+          <SyntaxHighlighter language="java" style={a11yDark}>
+        {skills}
+      </SyntaxHighlighter>
+      </ul>
         </section>
   );
 };
@@ -95,7 +115,8 @@ const Projects = () => {
           <p>I have developed my own game using Java. It can be found here: gitlab/taylordallimore</p>
         </li>
         <li>
-          <h3>WHAT ELSE HAVE I DONE</h3>
+          <h3>WHAT ELSE HAVE I DONE
+          </h3>
           <p>HELLO</p>
         </li>
         {/* Add more projects here */}
@@ -112,9 +133,8 @@ const App = () => {
       <div className="container">
       <About />
       <Skills />
+      <Contact />
       <Projects />
-
-      {/* Add more sections here */}
       </div>
     </div>
   );
