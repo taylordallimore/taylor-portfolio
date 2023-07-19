@@ -4,6 +4,29 @@
   margin: 0 auto;
   padding: 20px;
 }
+.hoverable-text {
+  /* Set the initial color of the text */
+  color: #333;
+  /* Add a transition for smooth color change on hover */
+  transition: color 0.3s ease-in-out;
+}
+
+.hoverable-text-link {
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+.hoverable-text:hover {
+  /* Set the color of the text on hover */
+  color: rgb(255, 255, 255);
+}
+
+.hoverable-text-link:hover {
+  /* Set the color of the text on hover */
+  color: rgb(130, 39, 209);
+}
+
+
 
 header {
   text-align: center;
@@ -33,6 +56,7 @@ nav li a {
   font-family: 'Courier New', Courier, monospace;
   font-size: larger;
   font-weight: bold;
+  hover: #333;
   
 }
 
@@ -70,6 +94,7 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to right, #175d8c, #7cd6f6); /* Adjust the colors as desired */
   color: #fff; /* Text color for better contrast */
+
 }
 
 .container {
@@ -106,6 +131,7 @@ section {
   text-align: left;
   color: #333;
 }
+
 
 
 

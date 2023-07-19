@@ -4,6 +4,8 @@ import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import './App.css';
 import profileImage from './yerrmie.jpg';
 
+
+
 const contact = `public class ContactMe {	
   public String myEmail = "taylordallimore98@gmail.com";
   public int myPhoneNumber = 0223930750;
@@ -59,10 +61,10 @@ const Header = () => {
       <h1>Taylor Dallimore</h1>
       <nav>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about"><p className='hoverable-text'>About</p></a></li>
+          <li><a href="#skills"><p className='hoverable-text'>Skills</p></a></li>
+          <li><a href="#contact"><p className='hoverable-text'>Contact</p></a></li>
+          <li><a href="#projects"><p className='hoverable-text'>Projects</p></a></li>
         </ul>
       </nav>
     </header>
@@ -108,19 +110,11 @@ const Skills = () => {
 const Projects = () => {
   return (
     <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li>
-          <h3>Java Game</h3>
-          <p>I have developed my own game using Java. It can be found here: gitlab/taylordallimore</p>
-        </li>
-        <li>
-          <h3>WHAT ELSE HAVE I DONE
-          </h3>
-          <p>HELLO</p>
-        </li>
-        {/* Add more projects here */}
-      </ul>
+      <h2>Links:</h2>
+      <p>
+      <a href="https://github.com/taylordallimore"><p className='hoverable-text-link'>My Github</p></a>
+      </p>
+      <a href="https://www.linkedin.com/in/taylor-dallimore/"><p className='hoverable-text-link'>My Linkedin</p></a>
     </section>
   );
 };
